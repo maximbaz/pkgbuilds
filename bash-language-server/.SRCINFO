@@ -1,0 +1,17 @@
+pkgbase = bash-language-server
+	pkgdesc = Bash language server implementation based on Tree Sitter and its grammar for Bash
+	pkgver = 1.4.0
+	pkgrel = 3
+	url = https://github.com/mads-hartmann/bash-language-server
+	arch = x86_64
+	license = MIT
+	makedepends = yarn
+	makedepends = typescript
+	makedepends = python2
+	depends = nodejs
+	depends = acorn
+	source = https://github.com/mads-hartmann/bash-language-server/archive/server-1.4.0.tar.gz
+	sha256sums = f47af22f66fcd2f4c271a05445851e3c492215adc3198dad18693c820f47ea96
+
+pkgname = bash-language-server
+
