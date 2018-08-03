@@ -1,8 +1,8 @@
 # Maintainer: Maxim Baz <$pkgname at maximbaz dot com>
 
 pkgname=bash-language-server
-pkgver=1.4.0
-pkgrel=3
+pkgver=1.5.1
+pkgrel=1
 pkgdesc="Bash language server implementation based on Tree Sitter and its grammar for Bash"
 arch=("x86_64")
 url="https://github.com/mads-hartmann/bash-language-server"
@@ -10,7 +10,7 @@ license=("MIT")
 depends=("nodejs" "acorn")
 makedepends=("yarn" "typescript" "python2")
 source=("https://github.com/mads-hartmann/$pkgname/archive/server-$pkgver.tar.gz")
-sha256sums=('f47af22f66fcd2f4c271a05445851e3c492215adc3198dad18693c820f47ea96')
+sha256sums=('c7bcd95ca6703483829e2f0ceb87c4a876ceb06a2a4ba11e0acd8a47295856dc')
 
 build() {
     cd "$srcdir/$pkgname-server-$pkgver"
