@@ -23,9 +23,9 @@ sha256sums=('77f08d736d08d8ff90809df1bf6d1a143d46e1214fcf7de6275a520f7a0057ee'
             '2898feeb41e03acd1a655ba5ddad0072aac83a014ee184fdcdebc7a66d353650')
 
 package() {
-  install -Dm644 emojione-android-alt-${pkgver}.ttf "${pkgdir}/usr/share/fonts/emojione/emojione-alt.ttf"
-  install -Dm644 75-emojione.conf "${pkgdir}/etc/fonts/conf.avail/75-emojione.conf"
-  install -Dm644 license-free.pdf "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.pdf"
+    install -Dm644 emojione-android-alt-${pkgver}.ttf "${pkgdir}/usr/share/fonts/emojione/emojione-alt.ttf"
+    install -Dm644 75-emojione.conf "${pkgdir}/etc/fonts/conf.avail/75-emojione.conf"
+    install -Dm644 license-free.pdf "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.pdf"
 }
 
-# vim:set ts=2 sw=2 et:
+# vim:set ts=4 sw=4 et:
