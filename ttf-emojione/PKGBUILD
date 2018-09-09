@@ -11,6 +11,7 @@ arch=(any)
 license=(custom)
 depends=('fontconfig')
 replaces=('emojione-fonts')
+install=ttf-emojione.install
 source=("emojione-android-${pkgver}.ttf"
         "emojione-android-alt-${pkgver}.ttf"
         "70-emojione.conf"
