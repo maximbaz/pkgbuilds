@@ -9,8 +9,7 @@ url="https://github.com/emojione/emojione-assets"
 arch=(any)
 license=(custom)
 depends=('fontconfig')
-conflicts=('ttf-emoji' 'noto-fonts-emoji' 'ttf-emojione-color' 'ttf-twemoji')
-provides=('ttf-emoji')
+conflicts=('noto-fonts-emoji' 'ttf-emojione-color' 'ttf-twemoji')
 replaces=('emojione-fonts')
 source=("emojione-android-${pkgver}.ttf::https://github.com/emojione/emojione-assets/releases/download/${pkgver}/emojione-android.ttf"
         "70-emojione.conf"
