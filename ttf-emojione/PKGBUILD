@@ -10,6 +10,7 @@ url="https://github.com/emojione/emojione-assets"
 arch=(any)
 license=(custom)
 depends=('fontconfig')
+provides=('ttf-emoji')
 replaces=('emojione-fonts')
 install=ttf-emojione.install
 source=("emojione-android-${pkgver}.ttf"

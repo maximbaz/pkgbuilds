@@ -7,6 +7,7 @@ pkgbase = ttf-emojione
 	arch = any
 	license = custom
 	depends = fontconfig
+	provides = ttf-emoji
 	replaces = emojione-fonts
 	source = emojione-android-4.0.ttf
 	source = emojione-android-alt-4.0.ttf
