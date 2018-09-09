@@ -22,7 +22,6 @@ package() {
   install -d "${pkgdir}/etc/fonts/"{conf.d,conf.avail}
   install -Dm644 emojione-android-${pkgver}.ttf "${pkgdir}/usr/share/fonts/emojione/emojione.ttf"
   install -t "${pkgdir}/etc/fonts/conf.avail/" -m644 70-emojione.conf
-  ln -sf ../conf.avail/70-emojione-color.conf ${pkgdir}/etc/fonts/conf.d/70-emojione-color.conf
   install -Dm644 license-free.pdf "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.pdf"
 }
 # vim:set ts=2 sw=2 et:
