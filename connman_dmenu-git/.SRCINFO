@@ -1,6 +1,6 @@
 pkgbase = connman_dmenu-git
 	pkgdesc = dmenu wrapper for connmanctl
-	pkgver = r64.ab60be7
+	pkgver = 65.68f6db3
 	pkgrel = 1
 	url = http://github.com/maximbaz/connman_dmenu
 	arch = any
