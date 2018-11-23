@@ -1,0 +1,29 @@
+# Maintainer: Maxim Baz <$pkgname at maximbaz dot com>
+
+_pkgname=kakmerge
+pkgname=$_pkgname-git
+pkgver=18.580c832
+pkgrel=1
+pkgdesc='Merge tool for Git using kakoune'
+arch=('any')
+url="http://github.com/lenormf/$_pkgname"
+license=('custom:unlicense')
+depends=('bash')
+optdepends=('kitty: multiplexer'
+            'tmux: multiplexer')
+makedepends=('git')
+conflicts=("$_pkgname")
+provides=("$_pkgname")
+source=("git+https://github.com/lenormf/$_pkgname.git")
+sha256sums=('SKIP')
+
+pkgver () {
+    cd "$_pkgname"
+    printf "%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+    cd "$_pkgname"
+    install -Dm755 -t "$pkgdir/usr/bin" "$_pkgname"
+    install -Dm644 UNLICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
