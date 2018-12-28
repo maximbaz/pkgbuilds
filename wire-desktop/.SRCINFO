@@ -1,5 +1,5 @@
 pkgbase = wire-desktop
-	pkgdesc = Modern, private messenger. Based on Electron.
+	pkgdesc = End-to-end encrypted messenger with file sharing, voice calls and video conferences
 	pkgver = 3.5.2881
 	pkgrel = 2
 	url = https://wire.com/

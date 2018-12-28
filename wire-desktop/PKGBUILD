@@ -4,7 +4,7 @@
 pkgname=wire-desktop
 pkgver=3.5.2881
 pkgrel=2
-pkgdesc='Modern, private messenger. Based on Electron.'
+pkgdesc='End-to-end encrypted messenger with file sharing, voice calls and video conferences'
 arch=('x86_64')
 url='https://wire.com/'
 license=('GPL3')
@@ -38,9 +38,7 @@ package() {
   desktop-file-install -m 644 --dir "${pkgdir}/usr/share/applications/" "${pkgname}.desktop"
   local res
   for res in 32x32 256x256; do
-    install -dm755 "${pkgdir}/usr/share/icons/hicolor/${res}/apps"
-    install -Dm644 "${pkgname}-linux-${pkgver}/resources/icons/${res}.png" \
-      "${pkgdir}/usr/share/icons/hicolor/${res}/apps/${pkgname}.png"
+    install -Dm644 "${pkgname}-linux-${pkgver}/resources/icons/${res}.png" "${pkgdir}/usr/share/icons/hicolor/${res}/apps/${pkgname}.png"
   done
 
   # Spellcheck dictionaries
