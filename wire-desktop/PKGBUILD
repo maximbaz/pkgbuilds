@@ -36,6 +36,7 @@ package() {
 
   # Place desktop entry and icon
   desktop-file-install -m 644 --dir "${pkgdir}/usr/share/applications/" "${pkgname}.desktop"
+  local res
   for res in 32x32 256x256; do
     install -dm755 "${pkgdir}/usr/share/icons/hicolor/${res}/apps"
     install -Dm644 "${pkgname}-linux-${pkgver}/resources/icons/${res}.png" \
@@ -47,6 +48,7 @@ package() {
   ln -s "/usr/share/hunspell" "${pkgdir}/usr/lib/${pkgname}/node_modules/spellchecker/vendor/hunspell_dictionaries"
 
   # Place license files
+  local license
   for license in "LICENSE.electron.txt" "LICENSES.chromium.html"; do
     install -Dm644 "${pkgname}-linux-${pkgver}/wrap/dist/linux-unpacked/${license}" "${pkgdir}/usr/share/licenses/${pkgname}/${license}"
   done
