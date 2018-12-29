@@ -14,7 +14,6 @@ pkgbase = wire-desktop-beta
 	depends = xdg-utils
 	optdepends = hunspell-en_US: for English spellcheck support
 	optdepends = emoji-font: colorful emoji
-	provides = wire-desktop
 	source = wire-desktop-beta-3.5.2881.tar.gz::https://github.com/wireapp/wire-desktop/archive/linux/3.5.2881.tar.gz
 	source = wire-desktop-beta.desktop
 	sha256sums = 4216cd9c3a2c4920aec2f3c967181b04bfafdb1b47e526a8e823911cce704da1

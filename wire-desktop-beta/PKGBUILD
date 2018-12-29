@@ -9,7 +9,6 @@ pkgdesc='End-to-end encrypted messenger with file sharing, voice calls and video
 arch=('x86_64')
 url='https://wire.com/'
 license=('GPL3')
-provides=('wire-desktop')
 depends=('electron' 'xdg-utils')
 makedepends=('cargo' 'npm' 'python2' 'git' 'yarn')
 optdepends=('hunspell-en_US: for English spellcheck support'
