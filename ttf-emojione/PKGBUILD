@@ -3,7 +3,7 @@
 
 pkgname=ttf-emojione
 pkgver=4.0.1
-pkgrel=6
+pkgrel=7
 pkgdesc='Official colorful EmojiOne font'
 url='https://github.com/emojione/emojione-assets'
 arch=('any')
