@@ -16,7 +16,7 @@ source=("${pkgname}-${pkgver}.tar.gz::https://github.com/wireapp/${pkgname}/arch
         "${pkgname}.desktop")
 sha256sums=('524db450d41a2dc677b8450cdf4e13dcc753280b2f6565ed5e23e6f59c14bed4'
             'SKIP'
-            '12d0437155677fb5f47d94e05c3b8f7cf1cf7cfa10051b1a7b1821d2ac94ddce')
+            '53f37e99d4c2f41a3e31fd70154d82ba06a4af578c68df86af4906f7f37ec787')
 validpgpkeys=('ABBA007D6E14E2DB5B283C45D599C1AA126762B1')
 
 prepare() {
