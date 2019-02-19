@@ -35,6 +35,7 @@ build() {
     cd "${pkgname}-linux-${pkgver}"
     yarn
     yarn build:ts
+    # TODO in the next release simply use: npx grunt 'linux-prod-package'
     BUILD_NUMBER="${pkgver##*.}" npx grunt 'clean:linux' 'update-keys' 'gitinfo'  'set-custom-data' 'release-prod' 'bundle'
 }
 
