@@ -13,7 +13,7 @@ depends=('gnupg')
 makedepends=('go-pie' 'git')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz"
         "${pkgname}-${pkgver}.tar.gz.sig::${url}/releases/download/${pkgver}/${pkgver}.tar.gz.sig")
-sha256sums=('61e4f16738f79840a7e0328269dedbf11d788c1f8adeff6458d1b6543692a28e'
+sha256sums=('1c9477f539121ac468080782631b6fc301d40783a52311c1e98770128506402a'
             'SKIP')
 validpgpkeys=('EB4F9E5A60D32232BB52150C12C87A28FEAC6B20')
 
