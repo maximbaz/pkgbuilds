@@ -1,0 +1,38 @@
+# Maintainer: Maxim Baz <$pkgname at maximbaz dot com>
+
+_id=pjmbgaakjkbhpopmakjoedenlfdmcdgm
+_name=browserpass-extension
+pkgname=browserpass-chromium
+pkgver=3.0.3
+pkgrel=1
+pkgdesc="Chromium extension for Browserpass"
+arch=('any')
+url="https://github.com/browserpass/${_name}"
+license=('ISC')
+depends=('browserpass')
+source=("${pkgname}-${pkgver}.crx::${url}/archive/${pkgver}.tar.gz"
+        "${pkgname}-${pkgver}.crx.sig::${url}/releases/download/${pkgver}/${pkgver}.tar.gz.sig"
+        "https://raw.githubusercontent.com/browserpass/browserpass-extension/master/LICENSE")
+noextract=("${pkgname}-${pkgver}.crx")
+sha256sums=('d3e4635f881908fbc1db454746d248ab841d6c9b8ce87091e4de9d478462bc5a'
+            'SKIP'
+            'ea8738ea89deaa31df9477e4f6cba90cb40d01e3e1e39b36afdcab763cf54dee')
+validpgpkeys=('EB4F9E5A60D32232BB52150C12C87A28FEAC6B20')
+
+prepare() {
+    # Create extension json
+    cat << EOF > "${_id}".json
+{
+    "external_crx": "/usr/lib/${pkgname}/${pkgname}-${pkgver}.crx",
+    "external_version": "${pkgver}"
+}
+EOF
+}
+
+package() {
+    install -Dm644 -t "${pkgdir}/usr/share/chromium/extensions/" "${_id}.json"
+    install -Dm644 -t "${pkgdir}/usr/lib/${pkgname}/" "${pkgname}-${pkgver}.crx"
+    install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}/" LICENSE
+}
+
+# vim:set ts=4 sw=4 et:

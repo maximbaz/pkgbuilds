@@ -1,0 +1,34 @@
+# Maintainer: Maxim Baz <$pkgname at maximbaz dot com>
+
+_id=browserpass@maximbaz.com
+_name=browserpass-extension
+pkgname=browserpass-firefox
+pkgver=3.0.3
+pkgrel=1
+pkgdesc="Firefox extension for Browserpass"
+arch=('any')
+url="https://github.com/browserpass/${_name}"
+license=('ISC')
+depends=('browserpass')
+source=("${pkgname}-${pkgver}.zip::${url}/releases/download/${pkgver}/firefox.zip"
+        "${pkgname}-${pkgver}.zip.sig::${url}/releases/download/${pkgver}/firefox.zip.sig"
+        "https://raw.githubusercontent.com/browserpass/browserpass-extension/master/LICENSE")
+noextract=("${pkgname}-${pkgver}.zip")
+sha256sums=('b5df2c16ced6c3bf8f6d00a0cd3e989e090a5364d2104e7a3b88f2d19c54bac3'
+            'SKIP'
+            'ea8738ea89deaa31df9477e4f6cba90cb40d01e3e1e39b36afdcab763cf54dee')
+validpgpkeys=('EB4F9E5A60D32232BB52150C12C87A28FEAC6B20')
+
+prepare() {
+    mkdir -p "${pkgname}-${pkgver}"
+    bsdtar -vxf "${pkgname}-${pkgver}.zip" -C "${pkgname}-${pkgver}"
+}
+
+package() {
+    _dest="${pkgdir}/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/${_id}"
+    install -dm755 "${_dest}"
+    cp -a "${pkgname}-${pkgver}"/* "${_dest}"
+    install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}/" LICENSE
+}
+
+# vim:set ts=4 sw=4 et:
