@@ -32,6 +32,11 @@ EOF
 package() {
     install -Dm644 -t "${pkgdir}/usr/share/chromium/extensions/" "${_id}.json"
     install -Dm644 -t "${pkgdir}/usr/lib/${pkgname}/" "${pkgname}-${pkgver}.crx"
+
+    # Install host json from browserpass package
+    install -dm755 "${pkgdir}/etc/chromium/native-messaging-hosts/"
+    ln -sf "/usr/lib/browserpass/hosts/chromium/com.github.browserpass.native.json" "${pkgdir}/etc/chromium/native-messaging-hosts/"
+
     install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}/" LICENSE
 }
 

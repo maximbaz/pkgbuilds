@@ -28,6 +28,11 @@ package() {
     _dest="${pkgdir}/usr/share/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}/${_id}"
     install -dm755 "${_dest}"
     cp -a "${pkgname}-${pkgver}"/* "${_dest}"
+
+    # Install host json from browserpass package
+    install -dm755 "${pkgdir}/usr/lib/mozilla/native-messaging-hosts/"
+    ln -sf "/usr/lib/browserpass/hosts/firefox/com.github.browserpass.native.json" "${pkgdir}/usr/lib/mozilla/native-messaging-hosts/"
+
     install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}/" LICENSE
 }
 
