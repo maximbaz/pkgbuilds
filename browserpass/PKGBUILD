@@ -3,7 +3,7 @@
 
 _name=browserpass-native
 pkgname=browserpass
-pkgver=3.0.2
+pkgver=3.0.3
 pkgrel=1
 pkgdesc="Browser extension for zx2c4's pass (password manager)"
 arch=('x86_64')
@@ -13,7 +13,7 @@ depends=('gnupg')
 makedepends=('go-pie' 'git')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz"
         "${pkgname}-${pkgver}.tar.gz.sig::${url}/releases/download/${pkgver}/${pkgver}.tar.gz.sig")
-sha256sums=('57a7c21fd6d8e1413664ec9ffd7fb43282197ede37a2608f92cb9c95966af366'
+sha256sums=('16694d7d6034a0d872ed7f6fb7d118b9920a3de4b6fa15f4a643eeb5c3df22bf'
             'SKIP')
 validpgpkeys=('EB4F9E5A60D32232BB52150C12C87A28FEAC6B20')
 
