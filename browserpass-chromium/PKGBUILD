@@ -3,7 +3,7 @@
 _id=pjmbgaakjkbhpopmakjoedenlfdmcdgm
 _name=browserpass-extension
 pkgname=browserpass-chromium
-pkgver=3.0.4
+pkgver=3.0.5
 pkgrel=1
 pkgdesc="Chromium extension for Browserpass"
 arch=('any')
@@ -14,7 +14,7 @@ source=("${pkgname}-${pkgver}.crx::${url}/releases/download/${pkgver}/browserpas
         "${pkgname}-${pkgver}.crx.sig::${url}/releases/download/${pkgver}/browserpass-github.crx.sig"
         "https://raw.githubusercontent.com/browserpass/browserpass-extension/master/LICENSE")
 noextract=("${pkgname}-${pkgver}.crx")
-sha256sums=('e5b99873ba700c3b385e3ba90e22476a3d59b0bb72eab67d1d368583d98ce12e'
+sha256sums=('57ce124ccaf978f3a09d123d8d470945725f9340cfcac1d68f77ecdaeca855e1'
             'SKIP'
             'ea8738ea89deaa31df9477e4f6cba90cb40d01e3e1e39b36afdcab763cf54dee')
 validpgpkeys=('EB4F9E5A60D32232BB52150C12C87A28FEAC6B20')

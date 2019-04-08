@@ -3,7 +3,7 @@
 _id=browserpass@maximbaz.com
 _name=browserpass-extension
 pkgname=browserpass-firefox
-pkgver=3.0.4
+pkgver=3.0.5
 pkgrel=1
 pkgdesc="Firefox extension for Browserpass"
 arch=('any')
@@ -14,7 +14,7 @@ source=("${pkgname}-${pkgver}.zip::${url}/releases/download/${pkgver}/firefox.zi
         "${pkgname}-${pkgver}.zip.sig::${url}/releases/download/${pkgver}/firefox.zip.sig"
         "https://raw.githubusercontent.com/browserpass/browserpass-extension/master/LICENSE")
 noextract=("${pkgname}-${pkgver}.zip")
-sha256sums=('a72d2dd832d22de1d748224471890abc5741fa9f952815ffc28a4e977acbb76b'
+sha256sums=('e6fc7c6c6cf048f9491c245798fa3690f71f1b3b1511436a16cfc6ab9b2a6aee'
             'SKIP'
             'ea8738ea89deaa31df9477e4f6cba90cb40d01e3e1e39b36afdcab763cf54dee')
 validpgpkeys=('EB4F9E5A60D32232BB52150C12C87A28FEAC6B20')
