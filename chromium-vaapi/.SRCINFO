@@ -32,6 +32,7 @@ pkgbase = chromium-vaapi
 	depends = pciutils
 	depends = json-glib
 	depends = libva
+	depends = pipewire
 	depends = desktop-file-utils
 	depends = hicolor-icon-theme
 	depends = icu
