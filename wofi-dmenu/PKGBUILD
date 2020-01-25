@@ -1,0 +1,17 @@
+# Maintainer: Maxim Baz <$pkgname at maximbaz dot com>
+
+pkgname=wofi-dmenu
+pkgver=1
+pkgrel=1
+pkgdesc="Symlink for using Wofi as a drop-in replacement to dmenu"
+arch=('any')
+url="https://todo.sr.ht/~scoopta/wofi"
+license=('MIT')
+depends=('wofi-hg')
+provides=('dmenu')
+conflicts=('dmenu')
+
+package() {
+    install -d "$pkgdir"/usr/bin
+    ln -sfT wofi "$pkgdir"/usr/bin/dmenu
+}

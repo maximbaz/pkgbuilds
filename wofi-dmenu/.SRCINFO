@@ -1,0 +1,13 @@
+pkgbase = wofi-dmenu
+	pkgdesc = Symlink for using Wofi as a drop-in replacement to dmenu
+	pkgver = 1
+	pkgrel = 1
+	url = https://todo.sr.ht/~scoopta/wofi
+	arch = any
+	license = MIT
+	depends = wofi-hg
+	provides = dmenu
+	conflicts = dmenu
+
+pkgname = wofi-dmenu
+
