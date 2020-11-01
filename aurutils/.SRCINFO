@@ -1,22 +1,26 @@
 pkgbase = aurutils
 	pkgdesc = helper tools for the arch user repository
-	pkgver = 2.3.6b
-	pkgrel = 1
+	pkgver = 3.0.0
+	pkgrel = 2
 	url = https://github.com/AladW/aurutils
-	install = aurutils.install
+	changelog = aurutils.changelog
 	arch = any
 	license = custom:ISC
+	makedepends = signify
 	depends = git
 	depends = jq
-	depends = expac
-	depends = diffstat
 	depends = pacutils
-	depends = wget
+	depends = curl
 	optdepends = bash-completion: bash completion
+	optdepends = zsh: zsh completion
 	optdepends = devtools: aur-chroot
-	optdepends = vifm: build file interaction
-	source = aurutils-2.3.6b.tar.gz::https://github.com/AladW/aurutils/archive/2.3.6b.tar.gz
-	sha256sums = 22b12a7161635622f86cb4c4dd28c79ae9e6c23e60f3ef7985d107879c64d004
+	optdepends = vifm: default pager
+	source = https://github.com/AladW/aurutils/releases/download/3.0.0/aurutils-3.0.0.tar.gz
+	source = https://github.com/AladW/aurutils/releases/download/3.0.0/aurutils-3.0.0.tar.gz.signify
+	source = aurutils.pub
+	sha256sums = b28da1527b2c6dddbe3aa00f79a0264b54fb671796f1fd9d03cb2f46e9cae8f9
+	sha256sums = SKIP
+	sha256sums = f11d869b344b01acb229db00fcd40f72a6ee1d3b080b0bc2870001ed94f99dc9
 
 pkgname = aurutils
 
