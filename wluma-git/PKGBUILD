@@ -3,14 +3,14 @@
 pkgname=wluma-git
 _pkgname=${pkgname%-git}
 pkgver=2.0.0.r0.g0b89a60
-pkgrel=1
+pkgrel=2
 license=('ISC')
 pkgdesc='Automatic brightness adjustment based on screen contents and ALS'
 url='https://github.com/maximbaz/wluma'
 arch=('x86_64')
 provides=('wluma')
 conflicts=('wluma')
-depends=('vulkan-icd-loader' 'vulkan-driver' 'wayland')
+depends=('vulkan-icd-loader' 'vulkan-driver' 'wayland' 'v4l-utils')
 makedepends=('git' 'rust')
 source=("git+https://github.com/maximbaz/${_pkgname}.git")
 sha256sums=('SKIP')

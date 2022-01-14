@@ -1,7 +1,7 @@
 pkgbase = wluma-git
 	pkgdesc = Automatic brightness adjustment based on screen contents and ALS
 	pkgver = 2.0.0.r0.g0b89a60
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/maximbaz/wluma
 	arch = x86_64
 	license = ISC
@@ -10,6 +10,7 @@ pkgbase = wluma-git
 	depends = vulkan-icd-loader
 	depends = vulkan-driver
 	depends = wayland
+	depends = v4l-utils
 	provides = wluma
 	conflicts = wluma
 	source = git+https://github.com/maximbaz/wluma.git
