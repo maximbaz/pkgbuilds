@@ -10,8 +10,8 @@ url='https://github.com/maximbaz/wluma'
 arch=('x86_64')
 provides=('wluma')
 conflicts=('wluma')
-depends=('vulkan-icd-loader' 'vulkan-driver' 'wayland')
-makedepends=('git' 'rust')
+depends=('vulkan-icd-loader' 'vulkan-driver' 'wayland' 'v4l-utils')
+makedepends=('git' 'rust' 'clang' 'systemd')
 source=("git+https://github.com/maximbaz/${_pkgname}.git")
 sha256sums=('SKIP')
 
