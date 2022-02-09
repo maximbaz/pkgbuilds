@@ -1,4 +1,170 @@
-## 3.0.0 - 2020-10-26
+## 4.3
+
+* `aur-build`
+  + wordsplit MAKEPKG and PACMAN_AUTH
+
+* `aur-sync`
+  + improve error handling
+
+## 4.2
+
+* `aur-build`
+  + support PACMAN_AUTH environment variable for custom elevation command
+
+* `aur-repo`
+  + improve error handling
+  + remove extraneous `--` on `--path` output
+
+## 4.1
+
+* `aur-build`
+  + handle absolute paths in `--arg-file`
+
+* `aur-pkglist`
+  + add `--users` (`-U`) to retrieve a list of AUR users
+  + update aur-pkglist(1) man page
+
+* `aur-repo`
+  + fix formatting for `--table` and packages with no dependencies
+
+## 4
+
+* `aur-build`
+  + add `--no-check` (`makepkg --nocheck`)
+
+* `aur-search`
+  + add `--table`
+
+* `aur-fetch`
+  + add compatibility options (`--recurse`)
+
+* `aur-repo`
+  + add compatibility options (`--path`, `--path-list`, `--repo-list`)
+  + fix regression with `AUR_QUERY_PARALLEL`
+
+* `aur-sync`
+  + add `--no-check` (short for `--no-checkdepends`)
+    - implies `aur-build --no-check`
+  + apply `--ignore` to local repository targets
+  + `--ignore-file` now works with process substitution (#880)
+  + remove `--no-depends`, `--no-makedepends`
+
+## 3.3.0
+
+`aur-query` and `aur-fetch` now take arguments from the command-line
+by default. If `-` or `/dev/stdin` is the first (and only) arguments,
+they are taken from `stdin` instead. In particular, `aur fetch --recurse`
+is now written as `aur depends --pkgbase ... | aur fetch -`, and the
+explicit `--recurse` option was removed.
+
+The `-` argument propagates to `aur-depends` and `aur-search`
+transparently. Additionally, `aur-sync` no longer calls `aur-depends`
+and `aur-fetch` with `xargs`, avoiding the 123 exit code on failure of
+these commands.
+
+## 3.2.1
+
+* `aur-query`
+  + support AUR_LOCATION
+  + preserve `curl --parallel` exit codes (requires curl >=7.77.0)
+  + complete aur-query(1) man page
+
+* `aur-pkglist`
+  + support multiinfo and search dumps (`--info`, `--search`)
+  + support HTTP Last-Modified
+
+* `aur-fetch`
+  + add `--existing`
+
+* `aur-view`
+  + new script that includes the package inspection logic from `aur-sync`
+
+## 3.2.0
+
+* `aur-build`
+  + retrieve database extension from `AUR_DBEXT` (defaults to .db) (#700)
+  + resolve path argument to `--results`
+  + use `aur repo --status` for repository selection
+    - allows specifying `--root` without `--database`
+  + print diagnostic if packages were not moved to local repository (#794)
+  + merge `--config` and `--pacman-conf` (#808, #824)
+  + fallback to /etc/aurutils/pacman-<arch>.conf if --chroot is used without --database (#846)
+  + add diagnostic if chroot pacman.conf is non-existing (#783)
+
+* `aur-depends`
+  + add `--no-depends`, `--no-makedepends`, `--no-checkdepends` (#826)
+  + add dependency kind column to `--table` output
+
+* `aur-chroot`
+  + preserve `SSH_AUTH_SOCK` to support ssh-based operations (#832)
+
+* `aur-repo`
+  + retrieve database extension from `AUR_DBEXT` (defaults to .db) (#700)
+  + add `--status`
+    - `repo:<NAME>\nroot:<PATH>\npath:<PATH/NAME.DBEXT>` output format
+    - replaces `--path`
+  + rename `--repo-list` to `--list-repo`
+  + rename `--path-list` to `--list-path`
+
+* `aur-repo-filter`
+  + run `pacsift` with `unbuffer` (#804)
+
+* `aur-vercmp`
+  + remove colon from `checkupdates` and `equal_or_newer` format (#833)
+
+## 3.1.2 - 2020-11-09
+
+This releases fixes a regression in 3.1.1 where `AUR_LIB_DIR` was not
+subsituted in `aur`.
+
+## 3.1.1 - 2020-11-09
+
+* `aur`
+  + add `--version`
+
+## 3.1.0 - 2020-11-09
+
+* `aur`
+  + fix example `aur-remove` script (#785)
+
+* `aur-build`
+  + change default pacman-conf for chroot builds to /etc/aurutils/pacman-<dbname>.conf
+  + clarify conditions on pacman-conf for chroot builds in `aur-build.1`
+
+* `aur-chroot`
+  + add `--create`
+    - seperate mode which runs `mkarchroot` with packages taken from the command-line
+    - defaults to base-devel (and multilib-devel, if applicable) if no packages are specified
+    - `--update` no longer runs `mkarchroot`
+  + `--packagelist` now uses `makepkg.conf` inside the container
+  + add `Devtools limitations` section to `aur-chroot.1` (#782)
+  + add additional error messages for missing pacman configuration
+
+* `aur-repo`
+  + add `--path-list`
+  + update man page for new arguments (#784)
+  + remove `--ini` (only offered pacman.conf information)
+
+## 3.0.3 - 2020-11-02
+
+* fix broken `zsh` completion (#776)
+* use `/tmp/aurutils-$UID` as default temporary directory (#775)
+
+## 3.0.2 - 2020-10-30
+
+* `aur-sync`
+  + add missing `--suffix` option (#773)
+
+## 3.0.1 - 2020-10-29
+
+The commits:
+
++ aur-sync: use XDG_RUNTIME_DIR for view directory (5341c059736d3eff59daea5cb52b7d35c98d0824)
++ aur-repo: simplify command line (57c1b2157806e645e7de85bf24e2c28b7d5f4458)
+
+were part of the 3.0.0 release tarball, but not the 3.0.0 tag. The 3.0.1 tag now includes these commits.
+
+## 3.0.0 - 2020-10-29
 
 * `aur`
   + add `AUR_EXEC_PATH` environment variable
